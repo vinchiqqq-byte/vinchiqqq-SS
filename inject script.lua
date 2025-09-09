@@ -1,13 +1,12 @@
-
--- Server-side script for the 'infected' RemoteEvent
+-- Server-side script for the 'G7M2X9B4P8QF1LD' RemoteEvent
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 -- Create the RemoteEvent if it doesn't exist
-local remote = ReplicatedStorage:FindFirstChild("infected")
+local remote = ReplicatedStorage:FindFirstChild("G7M2X9B4P8QF1LD")
 if not remote then
     remote = Instance.new("RemoteEvent")
-    remote.Name = "infected"
+    remote.Name = "G7M2X9B4P8QF1LD"
     remote.Parent = ReplicatedStorage
 end
 
