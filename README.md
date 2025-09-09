@@ -1,7 +1,7 @@
 # vinchiqqq-SS
 A roblox backdoor executor✅️
 -
-This script scans the game for a remote called "infected" in the game.
+This script scans the game for a remote called "G7M2X9B4P8QF1LD" in the game. Created by an infect script.
 
 ⚠️DISCLAIMER⚠️
 -
