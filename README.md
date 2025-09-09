@@ -17,7 +17,7 @@ It would say something like "Remote not found".
 How to infect YOUR game❔❔️
 -
 Download file named "inject script.lua" and copy the script. Now, create
-a ServerScript (or just script) in the ServerScriptStorage. Now when our
+a ServerScript (or just script) in the ServerScriptStorage and paste there the inject script. Now when our
 game is infected, we take one more step. Click on the ServerScriptService
 open up properties, and turn on "Enable Loadstring", click OK. And boom!
 Your game is infected with backdoor. If it still doesn't work create "infected"
