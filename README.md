@@ -11,8 +11,7 @@ I provide you a tutorial and infection script✅️
 -
 So. First download the "vinchiqqq SS.lua" file, and execute this script
 in YOUR game. Okay so normally click the "inject" button then 
-check the developer console for the output.
-It would say something like "Remote not found".
+check for notifications it will say something like "Remote not found".
 
 How to infect YOUR game❔❔️
 -
@@ -22,3 +21,17 @@ game is infected, we take one more step. Click on the ServerScriptService
 open up properties, and turn on "Enable Loadstring", click OK. And boom!
 Your game is infected with backdoor. If it still doesn't work create "infected"
 remote manually in the ReplicatedStorage.
+
+🎲CURRENT STATS
+-
+Lines - 303
+
+Infected Games - 3
+
+UPDATE 2.0
+-
+• Reworked the ui
+
+• Improved execution
+
+• Improved injection/check 
