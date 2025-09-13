@@ -1,4 +1,3 @@
--- Backdoor UI Script (toggle always visible + execute sends)
 
 -- Instances:
 local Converted = {
@@ -106,17 +105,6 @@ Converted["_inject"].Name = "inject"
 
 Converted["_UICorner5"].CornerRadius = UDim.new(0, 4)
 Converted["_UIStroke5"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
--- Toggle ImageButton
-Converted["_toggle"].Name = "toggleUIbutton"
-Converted["_toggle"].Image = "rbxassetid://10511856020"  -- sample toggle icon
-Converted["_toggle"].BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-Converted["_toggle"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_toggle"].BorderSizePixel = 1
-Converted["_toggle"].Size = UDim2.new(0, 30, 0, 30)
-Converted["_toggle"].Position = UDim2.new(0, 0, 0, 0)
-Converted["_toggle"].AnchorPoint = Vector2.new(0, 0)
-Converted["_toggle"].ZIndex = 50
 
 -- Services
 local Players = game:GetService("Players")
@@ -300,3 +288,4 @@ do
         end)
     end
 end
+
