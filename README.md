@@ -1,4 +1,7 @@
 # vinchiqqq-SS
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/vinchiqqq-byte/vinchiqqq-SS/refs/heads/main/%40vinchiqqq%20SS.lua'))()
+```
 A roblox backdoor executor✅️
 -
 This script scans the game for a remote called "G7M2X9B4P8QF1LD" in the game. Created by an infect script.
